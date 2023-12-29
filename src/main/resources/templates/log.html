@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Git Log</title>
+</head>
+<body>
+<p th:if="${errMsg != null}" th:text="${errMsg}"></p>
+
+<div th:if="${errMsg == null}" th:remove="tag">
+    <p>Here is the log for your repository:</p>
+    <ul style="list-style-type: none">
+        <li th:each="line : ${lines}" th:text="${line}"></li>
+    </ul>
+</div>
+</body>
+</html>
